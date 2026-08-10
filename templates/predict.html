@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}Predict House Price{% endblock %}
+
+{% block content %}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #4e73df, #1cc88a);
+        height: 100vh;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .predict-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .predict-card {
+        width: 850px;
+        padding: 40px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+        animation: fadeIn 0.8s ease-in-out;
+        color: white;
+    }
+
+    .predict-card h3 {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 35px;
+        letter-spacing: 1px;
+        color: #fff;
+    }
+
+    label {
+        font-weight: 600;
+        color: #e9e9e9;
+        margin-bottom: 4px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+    }
+
+    .btn-predict {
+        background: #fff;
+        color: #4e73df;
+        font-weight: 700;
+        border-radius: 10px;
+        height: 48px;
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    .btn-predict:hover {
+        background: #f1f1f1;
+        transform: translateY(-2px);
+    }
+
+    /* Prediction result animation */
+    .prediction-box {
+        font-size: 22px;
+        font-weight: 700;
+        padding: 20px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        color: #ffffff;
+        margin-top: 25px;
+        animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<div class="predict-wrapper">
+    <div class="predict-card">
+
+        <h3>🏡 Predict House Price</h3>
+
+        <form action="/predict" method="POST">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label>Median Income</label>
+                    <input type="number" step="0.01" name="MedInc" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>House Age</label>
+                    <input type="number" step="0.1" name="HouseAge" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Average Rooms</label>
+                    <input type="number" step="0.1" name="AveRooms" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Average Bedrooms</label>
+                    <input type="number" step="0.1" name="AveBedrms" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Population</label>
+                    <input type="number" step="1" name="Population" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Average Occupancy</label>
+                    <input type="number" step="0.1" name="AveOccup" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Latitude</label>
+                    <input type="number" step="0.001" name="Latitude" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Longitude</label>
+                    <input type="number" step="0.001" name="Longitude" class="form-control" required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-predict w-100 mt-3">Predict Price</button>
+        </form>
+
+        {% if prediction %}
+        <div class="prediction-box text-center">
+            Predicted House Price: <b>${{ prediction }}</b>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

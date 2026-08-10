@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | House Price Predictor</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            min-height: 100vh;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .about-card {
+            width: 900px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.20);
+            animation: fadeIn 0.7s ease-in-out;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .section-title i {
+            font-size: 28px;
+        }
+
+        p, li {
+            font-size: 16px;
+            color: #f1f1f1;
+        }
+
+        ul {
+            margin-left: -10px;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.18);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="about-card">
+
+    <!-- About Section -->
+    <div class="content-box">
+        <h2 class="section-title">
+            <i class="bi bi-info-circle-fill"></i> About This Application
+        </h2>
+        <p>
+            The <strong>House Price Predictor</strong> is a Machine Learning web application
+            built using <strong>Flask</strong> and the 
+            <strong>California Housing Dataset</strong>.  
+            Users enter housing features such as income, house age, rooms, population, and location
+            to receive an estimated house price predicted by a trained ML model.
+        </p>
+    </div>
+
+    <!-- Key Features -->
+    <div class="content-box">
+        <h2 class="section-title">
+            <i class="bi bi-stars"></i> Key Features
+        </h2>
+        <ul>
+            <li>🔐 Secure user login & signup system</li>
+            <li>🤖 ML model trained using Random Forest Regression</li>
+            <li>⚡ Real-time prediction of house prices</li>
+            <li>🎨 Clean, modern UI with responsive design</li>
+        </ul>
+    </div>
+
+    <!-- ML Workflow -->
+    <div class="content-box">
+        <h2 class="section-title">
+            <i class="bi bi-gear-wide-connected"></i> Machine Learning Workflow
+        </h2>
+        <ul>
+            <li><strong>Dataset:</strong> California Housing Dataset</li>
+            <li><strong>Preprocessing:</strong> cleaning, scaling, feature selection</li>
+            <li><strong>Model:</strong> Random Forest Regressor</li>
+            <li><strong>Pipeline:</strong> StandardScaler + RandomForest</li>
+            <li><strong>Model File:</strong> <code>model.joblib</code></li>
+        </ul>
+    </div>
+
+    <!-- Purpose -->
+    <div class="content-box">
+        <h2 class="section-title">
+            <i class="bi bi-compass-fill"></i> Purpose of This Project
+        </h2>
+        <p>
+            This project helps beginners understand real-world ML deployment.
+            It is ideal for academic learning, portfolio building, and showcasing
+            end-to-end machine learning workflow integrated with a modern UI.
+        </p>
+    </div>
+
+    <!-- Technologies -->
+    <div class="content-box">
+        <h2 class="section-title">
+            <i class="bi bi-cpu-fill"></i> Technologies Used
+        </h2>
+        <ul>
+            <li><strong>Frontend:</strong> HTML, CSS, Bootstrap</li>
+            <li><strong>Backend:</strong> Python Flask</li>
+            <li><strong>ML Libraries:</strong> scikit-learn, pandas, numpy</li>
+            <li><strong>Database:</strong> SQLite</li>
+            <li><strong>Model Deployment:</strong> Flask + Joblib</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
